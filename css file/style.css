@@ -1,0 +1,335 @@
+:root {
+    --py-color: rgb(170, 0, 0);
+    --sec-color: rgb(238, 179, 69);
+    --dsec-color: rgb(212, 160, 64);
+    --trans-tim: 0.2s;
+    --ent-color: darkslateblue;
+    --tech-color: #5fd2ff;
+    --b-color: rgb(100, 100, 100);
+    --db-color: rgb(53, 53, 53);
+    --w-color: rgb(250, 250, 250);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(245, 245, 245);
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    /* display: block; */
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+    padding: 0.5rem 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+span {
+    display: inline-block;
+    /* background-color: var(--sec-color); */
+    padding: 0.1rem 0.4rem 0.2rem 0.4rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#main-nav {
+    padding: 1rem;
+    background-color: rgb(240, 240, 240);
+}
+
+#main-nav .container {
+    display: grid;
+    grid-template-areas: 
+    'logo logo logo social ul';
+    align-items: center;
+}
+
+#main-nav .container .logo {
+    grid-area: logo;
+    width: 180px;
+}
+
+#main-nav .container .social {
+    grid-area: social;
+}
+
+#main-nav .container .social a i {
+    color: var(--b-color);
+    margin: 0.3rem;;
+    transition-property: color, transform;
+    transition-duration: 0.3s;
+}
+
+#main-nav .container .social a:hover i {
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+}
+
+#main-nav .container .ul {
+    grid-area: ul;
+    justify-self: end;
+    display: flex;
+    flex-direction: row;
+}
+
+#main-nav .container .ul li a {
+    padding: 0.75rem;
+    transition-property: background;
+    transition-duration: var(--trans-tim);
+}
+
+#main-nav .container .ul li a:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+#showcase {
+    background-color: rgba(51, 51, 51, 0.603);
+    color: var(--w-color);
+    height: 60vh;
+    padding: 4rem 3.2rem;
+    display: block;
+    position: relative;
+    line-height: 1.5;
+}
+
+#showcase:before {
+    content:'';
+    background: url('../imgs/featured.jpg') no-repeat center center/cover;
+    background-color: tomato;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#showcase .showcase-container {
+    width: 50%;
+}
+
+
+#showcase .showcase-container span {
+    display: inline-block;
+    background-color: var(--sec-color);
+    padding: 0.1rem 0.4rem 0.2rem 0.4rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#showcase .showcase-container .btn, .red-btn {
+    display: inline-block;
+    background-color: var(--py-color);
+    padding: 0.3rem 1rem;
+    margin: 1.5rem 0;
+    transition-property: background, transform;
+    transition-duration: 0.2s;
+    color: var(--w-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#showcase .showcase-container .btn:hover, .red-btn:hover {
+    background-color: darkred;
+    transform: translateX(4px);
+}
+
+.articles {
+    /* width: 10vw !important; */
+    padding: 2rem 3rem;
+} 
+
+.articles .articles-container {
+    display: grid;
+    /* grid-template-columns: repeat(3, auto); */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'ent-1 ent-1 sp-1'
+    'tech-1 sp-2 tech-2'
+    'sp-3 ent-2 ent-2';
+}
+
+.articles .articles-container .article {
+    transition-property: transform;
+    transition-duration: var(--trans-tim);
+}
+.articles .articles-container .article .txt {transition: none;}
+.articles .articles-container .article:hover .txt{transform: none !important;}
+.articles .articles-container .article:hover {
+    transform: translateY(-4px);
+}
+
+.articles .articles-container h1 {
+    font-size: 1.2rem;
+}
+
+#ent-1 {grid-area: ent-1}
+#sp-1 {grid-area: sp-1}
+#tech-1 {grid-area: tech-1}
+#sp-2 {grid-area: sp-2}
+#tech-2 {grid-area: tech-2}
+#sp-3 {grid-area: sp-3}
+#ent-2 {grid-area: ent-2}
+
+
+
+.articles .articles-container .ent span {
+    background-color: var(--ent-color);
+    color: whitesmoke;
+}
+.articles .articles-container .sp span {
+    background-color: var(--sec-color);
+    color: whitesmoke;
+}
+.articles .articles-container .tech span {
+    background-color: var(--tech-color);
+    color: whitesmoke;
+}
+
+.articles .articles-container .article {
+    padding: 1rem;
+    background: white;
+}
+
+
+.articles .articles-container #ent-1 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.articles .articles-container #ent-1:hover {
+    transform: translateX(-4px);
+}
+
+.articles .articles-container #ent-1 img, .articles .articles-container #ent-1 .txt {
+    flex: 1 !important;
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.articles .articles-container #sp-1 {
+    background: var(--b-color);
+    color: var(--w-color);
+}
+
+.articles .articles-container #sp-1:hover {transform: translateY(-4px);}
+
+.articles .articles-container #sp-2 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.articles .articles-container #sp-2 .txt {
+    padding: 0.5rem;
+}
+
+.articles .articles-container #sp-3 {
+    background: var(--py-color);
+    color: var(--w-color);
+}
+
+.articles .articles-container #ent-2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.articles .articles-container #ent-2:hover {transform: translateX(4px);}
+
+.articles .articles-container #ent-2 img, .articles .articles-container #ent-2 .txt {
+    flex: 1 !important;
+    width: 50%;
+    padding: 0.5rem;
+}
+
+#main-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    'ab sub links join'
+    'footer footer footer footer';
+    grid-gap: 2rem;
+    background-color: var(--db-color);
+    color: var(--w-color);
+    padding: 2rem;
+    /* padding-right: 0; */
+    padding-bottom: 2rem;
+    justify-content: space-around;
+}
+
+#main-footer .grid-about {
+    grid-area: ab;
+}
+#main-footer .grid-about img { width: 70%;margin: 0.5rem 0;}
+#main-footer .subscribe {
+    grid-area: sub;
+}
+
+#main-footer .subscribe input {display: block;width: 90%;border: none;outline: none; margin: 1rem 0;padding: 0.8rem;}
+
+#main-footer .subscribe .btn {padding: 0.6rem 0.5rem}
+#main-footer .subscribe .btn:hover {transform: scale(1.05);}
+
+#main-footer .site-links {
+    grid-area: links;
+}
+
+#main-footer .site-links ul li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    border-bottom: var(--b-color) 1px dotted;
+}
+
+#main-footer .site-links ul li a {
+    transition-property: color;
+    transition-duration: var(--trans-tim);
+}
+#main-footer .site-links ul li a:hover {
+    color: var(--py-color);
+}
+
+#main-footer .join {
+    grid-area: join;
+}
+#main-footer .join .sec-btn {
+    border: none;
+    outline: none;
+    display: inline-block;
+    background-color: var(--sec-color);
+    color: var(--w-color);
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    margin: 1rem 0;
+    width: 60%;
+    transition-property: background, transform;
+    transition-duration: var(--trans-tim);
+}
+#main-footer .join .sec-btn:hover {background-color: var(--dsec-color);transform: translateX(4px) }
+
+#main-footer .footer {
+    grid-area: footer;
+    text-align: center;
+    background: var(--b-color);
+    padding: 0.8rem;
+    margin: 0 0.4rem;
+}
